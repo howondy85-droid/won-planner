@@ -1,0 +1,23 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // 허용된 구글 계정만 읽고 쓸 수 있습니다.
+    // 직원을 추가할 때는 아래 목록과 index.html 의 ALLOWED_EMAILS 두 곳에 같은 이메일을 넣으세요.
+    function isAllowed() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email in [
+          "howondy85@gmail.com"
+        ];
+    }
+
+    match /employees/{id}   { allow read, write: if isAllowed(); }
+    match /tasks/{id}       { allow read, write: if isAllowed(); }
+    match /notes/{id}       { allow read, write: if isAllowed(); }
+    match /taskGroups/{id}  { allow read, write: if isAllowed(); }
+
+    // 그 외 모든 경로는 차단
+    match /{document=**} { allow read, write: if false; }
+  }
+}
