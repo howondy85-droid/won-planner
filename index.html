@@ -45,7 +45,8 @@
   .sidebar{width:250px;flex-shrink:0;background:var(--sidebar-bg);color:var(--sidebar-ink);
     display:flex;flex-direction:column;padding:16px 14px;gap:16px;overflow-y:auto;}
   .brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:15.5px;padding:2px 4px 4px;}
-  .brand-mark{width:24px;height:24px;border-radius:7px;background:var(--ever-green);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;}
+  .brand-mark{width:28px;height:28px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;}
+  .brand-mark img,.login-mark img{width:100%;height:100%;object-fit:cover;display:block;}
 
   .sidebar-search-wrap{position:relative;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.08);}
   .sidebar-search-input{width:100%;background:var(--sidebar-bg-soft);border:1px solid rgba(255,255,255,0.08);color:var(--sidebar-ink);
@@ -343,8 +344,8 @@
   .login-overlay.hidden{display:none;}
   .login-card{background:var(--paper);border-radius:16px;padding:32px 28px 26px;width:340px;max-width:100%;text-align:center;
     box-shadow:0 24px 70px rgba(0,0,0,0.4);}
-  .login-mark{width:56px;height:56px;border-radius:16px;background:var(--ever-green);display:flex;align-items:center;justify-content:center;
-    font-size:28px;margin:0 auto 14px;}
+  .login-mark{width:84px;height:84px;border-radius:20px;background:#fff;display:flex;align-items:center;justify-content:center;
+    margin:0 auto 14px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,0.12);}
   .login-card h1{margin:0 0 6px;font-size:19px;font-weight:800;}
   .login-card p{margin:0 0 20px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;}
   .login-btn{width:100%;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px;
@@ -415,7 +416,7 @@
 
 <div id="loginOverlay" class="login-overlay hidden">
   <div class="login-card">
-    <div class="login-mark">🍪</div>
+    <div class="login-mark"><img src="icons/icon-192.png" alt=""></div>
     <h1>원사부 플래너</h1>
     <p>팀 전용 플래너입니다.<br>허용된 구글 계정으로 로그인해주세요.</p>
     <button id="googleLoginBtn" class="login-btn" disabled>
@@ -437,7 +438,7 @@
 <div class="app" id="app" style="display:none;">
   <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
   <aside class="sidebar">
-    <div class="brand"><span class="brand-mark">🐘</span> 원사부 플래너</div>
+    <div class="brand"><span class="brand-mark"><img src="icons/icon-192.png" alt=""></span> 원사부 플래너</div>
 
     <div class="sidebar-search-wrap">
       <input type="text" id="sidebarSearchInput" class="sidebar-search-input" placeholder="🔍 제목·태그·담당자·내용 검색">

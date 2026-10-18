@@ -1,6 +1,6 @@
 // 앱 화면(HTML)과 Firebase 라이브러리를 기기에 보관해서, 인터넷이 약해도 앱이 열리도록 합니다.
 // 데이터(업무·노트)는 Firestore가 따로 기기에 저장·동기화합니다.
-const CACHE = "wonsabu-planner-v1";
+const CACHE = "wonsabu-planner-v2";
 const SHELL = ["./", "./index.html", "./manifest.json", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/apple-touch-icon.png"];
 
 self.addEventListener("install", (e) => {
